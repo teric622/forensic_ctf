@@ -46,7 +46,10 @@
             resultDiv.innerHTML = ""; 
 
             if (hash === CORRECT_HASH) {
-                resultDiv.innerHTML = "<h2>🎉 Correct! You found the flag! 🎉</h2>";
+                resultDiv.innerHTML = `<h2>You found the flag!</h2>
+                <iframe src="https://giphy.com/embed/yJFeycRK2DB4c" width="480" height="384" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/yJFeycRK2DB4c">via GIPHY</a></p>
+                
+                `;
             } else {
                 resultDiv.innerHTML = `
                     <h2>❌ Wrong Flag! ❌</h2>
