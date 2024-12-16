@@ -1,4 +1,4 @@
-file_path = "chicago_bean_mystery.jpg"
+file_path = "chicago_bean_mystery_2.jpg"
 def extract_long_strings(file_path, min_length=20):
     with open(file_path, "rb") as file:
         binary_data = file.read()
