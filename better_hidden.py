@@ -8,8 +8,8 @@ def embed_flag(image_file, output_file, flag):
 
     print(f"Flag embedded successfully into {output_file}")
 image_file = "chicago_hidden.jpg"  
-output_file = "chicago_bean.jpg"  
-flag = "ZmxhZ3t5b3VfbGlrZV9iZWFuc18/X0lfbGlrZV9iZWFuc190aGFuc190aGVfdGhfYmVhfQ=="  
+output_file = "chicago_bean_mystery.jpg"  
+flag = "ZmxhZ3t5b3VfbGlrZV9iZWFucz9fSV9saWtlX2JlYW5zX3RoYXRfYV9iaWdfYmVhbl9ldG19"  
 
 embed_flag(image_file, output_file, flag)
 
