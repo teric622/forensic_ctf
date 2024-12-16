@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Flag</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <p><a href="static\chicago_bean.jpg" download>Download chicago_bean.jpg</a></p>
+    <h1>Submit Your Flag</h1>
+    <p>Enter the flag to see if you're correct!</p>
+    <form id="flagForm">
+        <input type="text" id="flagInput" placeholder="Enter your flag" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result" style="margin-top: 20px;"></div>
+    <script>
+        const CORRECT_HASH = "7b5a33f134e8e3d88b8cd4d947aa25f2b9b7851cd4d86e013b3dcb50b7e40c57";
+        document.getElementById("flagForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            const userFlag = document.getElementById("flagInput").value;
+            const hash = CryptoJS.SHA256(userFlag).toString();
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = ""; 
+
+            if (hash === CORRECT_HASH) {
+                resultDiv.innerHTML = "<h2>🎉 Correct! You found the flag! 🎉</h2>";
+            } else {
+                resultDiv.innerHTML = `
+                    <h2>❌ Wrong Flag! ❌</h2>
+                    <iframe src="https://giphy.com/embed/a4WZsE6HRwjo4hrgov" width="480" height="293" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/mls-galaxy-lag-la-a4WZsE6HRwjo4hrgov">via GIPHY</a></p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
