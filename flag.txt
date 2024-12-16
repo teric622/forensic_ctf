@@ -1,0 +1,2 @@
+flag{you_like_beans}
+flag{if_so_have_green_beans_and_ham}
